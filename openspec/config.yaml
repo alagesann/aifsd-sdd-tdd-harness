@@ -1,0 +1,16 @@
+schema: spec-driven
+
+context: |
+  Orders API. TypeScript, Node.js 24, Fastify 5, Vitest 4.
+  Business rules live in pure functions under src/<capability>/; I/O stays in Fastify plugins and stores.
+  Time is always injected (a Clock); tests never sleep.
+
+rules:
+  specs:
+    - Every scenario MUST use concrete values (counts, HTTP status, headers)
+    - Every numeric threshold MUST have a scenario exactly at the boundary
+  design:
+    - Any concurrency-sensitive rule MUST say where it is made atomic
+
+# Step 4 of the blog: add the TDD guidance for apply here (operations.apply.guidance),
+# then check it with: npx openspec instructions apply --change <name> --json

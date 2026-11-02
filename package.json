@@ -1,0 +1,22 @@
+{
+  "name": "orders-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "check": "openspec validate --all --strict && tsc --noEmit && vitest run && node scripts/spec-coverage.mjs"
+  },
+  "dependencies": {
+    "fastify": "^5.12.7"
+  },
+  "devDependencies": {
+    "@fission-ai/openspec": "1.14",
+    "@stryker-mutator/core": "^10.1.1",
+    "@stryker-mutator/vitest-runner": "^10.1.1",
+    "@types/node": "^24.19.2",
+    "typescript": "~5.9",
+    "vitest": "^4.1.12"
+  }
+}

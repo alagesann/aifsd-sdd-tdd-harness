@@ -6,11 +6,14 @@ context: |
   Time is always injected (a Clock); tests never sleep.
 
 rules:
+  proposal:
+    - 'End with "## For the reviewer": at most 5 bullets covering assumptions, scope cuts and risky decisions'
   specs:
     - Every scenario MUST use concrete values (counts, HTTP status, headers)
     - Every numeric threshold MUST have a scenario exactly at the boundary
+    - One scenario per behaviour, plus only the required boundary scenarios
   design:
     - Any concurrency-sensitive rule MUST say where it is made atomic
-
+    - At most 4 decisions; each at most 4 sentences plus 1-2 rejected alternatives
 # Step 4 of the blog: add the TDD guidance for apply here (operations.apply.guidance),
 # then check it with: npx openspec instructions apply --change <name> --json
